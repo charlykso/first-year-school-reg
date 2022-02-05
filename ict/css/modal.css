@@ -1,0 +1,80 @@
+/* Style the image used to trigger the modal */
+td img{
+    cursor: pointer;
+}
+
+td img:hover{
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal{
+    display: none;  /* hidden by default */
+    position: fixed; /* stay in place */
+    z-index: 1; /* sit on top */
+    padding-top: 100px;  /* location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;   /* full width */
+    height: 100%;  /* full height */
+    overflow: auto;  /* Enable scroll if needed */
+    background-color: #000;   /* fallback color */
+    background-color: rgba(0, 0, 0, 0.9);  /* black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* caption of modal image (image text)- same width as the image */
+#caption{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add animation - zoom in the modal */
+.modal-content, #caption{
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom{
+    from{transform: scale(0)}
+    to{transform: scale(1)}
+}
+
+/* The close button */
+.close{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    /* color: #fff; */
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus{
+    color: rgb(26, 192, 34);
+    font-size: 50px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% image width on smaller screen */
+@media only screen and (max-width: 700px){
+    .modal-content{
+        width: 100%;
+    }
+}
